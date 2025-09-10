@@ -3,7 +3,7 @@
 ## Folder Structure
 - `lib/`
   - `Scr/`
-    - `app/`
+    - `App/` :
     - `core/` : Contains utilities, styles, and common widgets
     - `features/` : Each feature in its own subfolder
       - `home/` : Home pages
