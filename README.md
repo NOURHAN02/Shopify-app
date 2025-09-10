@@ -1,16 +1,26 @@
-# shopify_app
+# Shopify Clone Flutter
 
-A new Flutter project.
+## Folder Structure
+- `lib/`
+  - `Scr/`
+  - `app/`
+    - `core/` : Contains utilities, styles, and common widgets
+    - `features/` : Each feature in its own subfolder
+      - `home/` : Home pages
+      - `store/` : Store pages
+      - `product/`
+        - `data/` : Data layer
+          - `models/` : Defines models like `OptionModel` and `ProductVariant`
+          - `repo/` : `ProductRepo` implementation
+        - `presentation/` : UI layer
+          - `widgets/` : All product-related widgets
+          - `manager/` : Bloc or Cubit for state management
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## How to Run the Project
+1. Make sure [Flutter](https://flutter.dev/docs/get-started/install) is installed
+2. Open the project in VS Code or Android Studio
+3. Run the following commands:
+```bash
+git clone https://github.com/NOURHAN02/Shopify-app.git
+flutter pub get
+flutter run
