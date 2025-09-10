@@ -1,0 +1,1 @@
+enum InfoProductEnum {title,description,category,optionName}
