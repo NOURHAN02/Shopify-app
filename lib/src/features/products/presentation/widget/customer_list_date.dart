@@ -18,25 +18,26 @@ class CustomerListData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final productBloc=context.read<ProductBloc>();
-    return Row(
-      children: [
-         AddPhotoWidget(option: option,),
-        const SizedBox(width: 20),
-        Text("${option.values.toList()[1]}"),
-        const SizedBox(width: 20),
-        Expanded(
-          flex: 2,
-       child:    CustomerTextFormWidget(
-            hintText: "0.0",
-            text: "${option['price']}",
-            onChanged: (val) {
-              option['price'] = double.tryParse(val) ?? 0.0;
-              productBloc.emit(AddOptionState());
-            },
-          ),
-          ),
-        const Expanded(child: SizedBox()),
-      ],
+    return SingleChildScrollView(
+      child: Row(
+        children: [
+           AddPhotoWidget(option: option,),
+          const SizedBox(width: 20),
+          Text("${option.values.toList()[0]}"),
+          const SizedBox(width: 50),
+          Expanded(
+            flex: 2,
+         child:    CustomerTextFormWidget(
+              hintText: "0.0",
+              text: "${option['price']}",
+              onChanged: (val) {
+                option['price'] = double.tryParse(val) ?? 0.0;
+                productBloc.emit(AddOptionState());
+              },
+            ),
+            ),
+        ],
+      ),
     );
   }
 }

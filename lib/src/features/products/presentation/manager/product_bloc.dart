@@ -67,13 +67,17 @@ class ProductBloc extends Cubit<ProductStates> {
       productVariantList: variant,
     );
     String jsonString = jsonEncode(addProduct.toJson());
-
-    // اطبع النتيجة
     log("AddProduct JSON: $jsonString");
   }
 
   void fetchVariantTable() {
     final repo = ProductRepo();
+    for (var option in optionsList) {
+      if (option.optionValue.isNotEmpty) {
+        option.optionValue.removeLast();
+      }
+    }
+
     variant = repo.generateVariants(optionsList);
 
     groupedList.clear();

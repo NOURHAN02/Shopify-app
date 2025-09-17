@@ -42,7 +42,8 @@ class OptionValuesWidget extends StatelessWidget {
             },
           ),
         );
-      }).toList(),
+      }).toList()
     );
   }
 }
+

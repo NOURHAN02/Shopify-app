@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopify_app/src/features/drawer/data/repo/drawer_repo.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => ProductBloc()),
       ],
       child: MaterialApp(
+          useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           scaffoldBackgroundColor: ColorsApp.kBackgroundColor,

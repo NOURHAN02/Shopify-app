@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shopify_app/src/core/utils/styles.dart';
 
 class StoreView extends StatelessWidget {
@@ -6,10 +7,13 @@ class StoreView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text("Store", style: StylesApp.titleStyle)],
+        children: [
+          Lottie.asset('assets/empty.json'),
+          const Text("Store", style: StylesApp.titleStyle),
+        ],
       ),
     );
   }
